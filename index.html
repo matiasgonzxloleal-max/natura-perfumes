@@ -1,116 +1,175 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Natura Perfumes</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: #f5f5f5;
-    }
-    header {
-      background: #1f6f5c;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-    .direccion {
-      background: #e6f2ef;
-      padding: 10px;
-      text-align: center;
-      font-size: 14px;
-    }
-    .direccion a {
-      color: #1f6f5c;
-      font-weight: bold;
-      text-decoration: none;
-    }
-    /* BANNER */
-    .banner {
-      background: linear-gradient(135deg, #1f6f5c, #2fa18c);
-      color: white;
-      text-align: center;
-      padding: 30px 15px;
-    }
+<meta charset="UTF-8">
+<title>Perfumes Natura</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    .banner h2 {
-      margin: 0 0 10px;
-      font-size: 22px;
-    }
+<style>
+:root{
+  --verde:#1f6f5c;
+  --verde2:#2fa18c;
+  --whatsapp:#25d366;
+}
 
-    .banner p {
-      margin: 0 0 15px;
-      font-size: 15px;
-    }
+*{box-sizing:border-box}
 
-    .banner a {
-      background: #25d366;
-      color: white;
-      padding: 12px 25px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: bold;
-      display: inline-block;
-    }
-    .seccion {
-      padding: 20px;
-    }
-    h2 {
-      border-bottom: 2px solid #1f6f5c;
-      padding-bottom: 5px;
-    }
-    .productos {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-    }
-    .producto {
-      background: white;
-      border-radius: 10px;
-      padding: 15px;
-      text-align: center;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    .producto img {
-      width: 100%;
-      max-height: 200px;
-      object-fit: contain;
-    }
-    .precio {
-      font-weight: bold;
-      margin: 10px 0;
-    }
-    .boton {
-      background: #25d366;
-      color: white;
-      padding: 10px;
-      border-radius: 5px;
-      text-decoration: none;
-      display: inline-block;
-      margin-top: 5px;
-    }
-  </style>
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial;
+  background:#f4f6f5;
+  color:#333;
+}
+
+/* HEADER */
+header{
+  background:var(--verde);
+  color:#fff;
+  padding:22px 15px;
+  text-align:center;
+}
+
+/* BANNER */
+.banner{
+  background:linear-gradient(135deg,var(--verde),var(--verde2));
+  color:#fff;
+  text-align:center;
+  padding:28px 16px;
+}
+.banner h2{margin:0 0 8px;font-size:22px}
+.banner p{margin:0 0 14px;font-size:15px}
+.banner a{
+  background:var(--whatsapp);
+  color:#fff;
+  padding:14px 26px;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:700;
+  display:inline-block;
+}
+
+/* DIRECCION */
+.direccion{
+  background:#e6f2ef;
+  padding:12px;
+  text-align:center;
+  font-size:14px;
+}
+.direccion a{
+  color:var(--verde);
+  text-decoration:none;
+  font-weight:600;
+}
+
+/* SECCIONES */
+.seccion{
+  padding:22px 16px;
+}
+.seccion h2{
+  margin:0 0 14px;
+  font-size:22px;
+  border-left:5px solid var(--verde);
+  padding-left:10px;
+}
+
+/* PRODUCTOS */
+.productos{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:16px;
+}
+
+/* TARJETA */
+.producto{
+  background:#fff;
+  border-radius:16px;
+  padding:14px;
+  text-align:center;
+  box-shadow:0 8px 18px rgba(0,0,0,.08);
+  transition:transform .3s ease,box-shadow .3s ease;
+  animation:fadeUp .6s ease both;
+}
+.producto:hover{
+  transform:translateY(-6px);
+  box-shadow:0 14px 30px rgba(0,0,0,.15);
+}
+
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+.producto img{
+  width:100%;
+  max-height:180px;
+  object-fit:contain;
+  transition:transform .3s ease;
+}
+.producto:hover img{transform:scale(1.05)}
+
+.producto h3{
+  margin:10px 0 4px;
+  font-size:16px;
+}
+
+.producto span{
+  font-size:13px;
+  color:#666;
+}
+
+.precio{
+  margin:10px 0;
+  font-size:18px;
+  font-weight:700;
+  color:#000;
+}
+
+/* BOTON */
+.boton{
+  display:block;
+  background:var(--whatsapp);
+  color:#fff;
+  text-decoration:none;
+  padding:12px;
+  border-radius:10px;
+  font-weight:700;
+  transition:background .2s ease;
+}
+.boton:hover{background:#1ebe5b}
+
+/* FOOTER INFO */
+.info{
+  background:#fff;
+  margin:20px 16px;
+  padding:18px;
+  border-radius:16px;
+  box-shadow:0 6px 14px rgba(0,0,0,.06);
+  text-align:center;
+}
+.info p{margin:6px 0;font-size:14px}
+
+@media(min-width:768px){
+  .productos{grid-template-columns:repeat(4,1fr)}
+}
+</style>
 </head>
 
 <body>
 
 <header>
-  <h1>Natura Cosméticos</h1>
+<h1>Perfumes Natura</h1>
 </header>
-  <div class="banner">
-  <h2>✨Consultá promociones y stock disponible✨</h2>
-  <p>Perfumes al Mejor Precio · Envíos con UberMoto</p>
-  <a href="https://wa.me/5493813571205?text=Hola!%20Quiero%20consultar%20promociones%20y%20stock">
-    Consultar por WhatsApp
-  </a>
+
+<div class="banner">
+<h2>✨ Promociones y stock disponible</h2>
+<p>Consultá y comprá directo por WhatsApp</p>
+<a href="https://wa.me/5493813571205?text=Hola!%20Quiero%20consultar%20stock">Consultar por WhatsApp</a>
 </div>
 
 <div class="direccion">
-  📍 <a href="https://www.google.com/maps/search/?api=1&query=Catamarca+1129,+San+Miguel+de+Tucumán" target="_blank">
-    Catamarca 1129, San Miguel de Tucumán
-  </a>
+📍 <a href="https://www.google.com/maps/search/?api=1&query=Catamarca+1129,+San+Miguel+de+Tucumán" target="_blank">
+Catamarca 1129, San Miguel de Tucumán
+</a>
 </div>
 
 <!-- MASCULINOS -->
@@ -121,65 +180,65 @@
 <div class="producto">
 <img src="humor-beijo-m.jpg">
 <h3>Humor Beijo</h3>
-   <span>75ml · EDT</span>
+<span>75ml · EDT</span>
 <p class="precio">$30.000</p>
-<a class="boton" href="https://wa.me/5493813571205?text=Hola!%20Quiero%20el%20Humor%20Beijo%20Masculino">Comprar</a>
+<a class="boton" href="https://wa.me/5493813571205?text=Quiero%20Humor%20Beijo%20Masculino">Comprar</a>
 </div>
 
 <div class="producto">
 <img src="kaiak-urbe.jpg">
 <h3>Kaiak Urbe</h3>
-   <span>100ml · EDT</span>
+<span>100ml · EDT</span>
 <p class="precio">$30.000</p>
-<a class="boton" href="https://wa.me/5493813571205?text=Hola!%20Quiero%20Kaiak%20Urbe">Comprar</a>
+<a class="boton" href="https://wa.me/5493813571205?text=Quiero%20Kaiak%20Urbe">Comprar</a>
 </div>
 
 <div class="producto">
 <img src="kaiak-pulso.jpg">
 <h3>Kaiak Pulso</h3>
-   <span>100ml · EDT</span>
+<span>100ml · EDT</span>
 <p class="precio">$30.000</p>
-<a class="boton" href="https://wa.me/5493813571205?text=Hola!%20Quiero%20Kaiak%20Pulso">Comprar</a>
+<a class="boton" href="https://wa.me/5493813571205?text=Quiero%20Kaiak%20Pulso">Comprar</a>
 </div>
 
 <div class="producto">
 <img src="biografia-clasico.jpg">
 <h3>Biografía Clásico</h3>
-   <span>100ml · EDT</span>
+<span>100ml · EDT</span>
 <p class="precio">$30.000</p>
-<a class="boton" href="https://wa.me/5493813571205?text=Hola!%20Quiero%20Biografía%20Clásico">Comprar</a>
+<a class="boton" href="https://wa.me/5493813571205?text=Quiero%20Biografia%20Clasico">Comprar</a>
 </div>
 
 <div class="producto">
 <img src="essencial-sentir-m.jpg">
 <h3>Essencial Sentir</h3>
-   <span>100ml · EDP</span>
+<span>100ml · EDP</span>
 <p class="precio">$48.000</p>
-<a class="boton" href="https://wa.me/5493813571205?text=Hola!%20Quiero%20Essencial%20Sentir%20Masculino">Comprar</a>
+<a class="boton" href="https://wa.me/5493813571205?text=Quiero%20Essencial%20Sentir%20Masculino">Comprar</a>
 </div>
 
 <div class="producto">
 <img src="essencial-exclusivo-m.jpg">
 <h3>Essencial Exclusivo</h3>
-   <span>100ml · EDP</span>
+<span>100ml · EDP</span>
 <p class="precio">$48.000</p>
-<a class="boton" href="https://wa.me/5493813571205?text=Hola!%20Quiero%20Essencial%20Exclusivo%20Masculino">Comprar</a>
+<a class="boton" href="https://wa.me/5493813571205?text=Quiero%20Essencial%20Exclusivo%20Masculino">Comprar</a>
 </div>
 
 <div class="producto">
 <img src="homem-nos.jpg">
 <h3>Homem Nos</h3>
-   <span>100ml · EDP</span>
+<span>100ml · EDP</span>
 <p class="precio">$40.000</p>
-<a class="boton" href="https://wa.me/5493813571205?text=Hola!%20Quiero%20Homem%20Nos">Comprar</a>
+<a class="boton" href="https://wa.me/5493813571205?text=Quiero%20Homem%20Nos">Comprar</a>
 </div>
 
 <div class="producto">
 <img src="homem-coragio.jpg">
 <h3>Homem Cor.Agio</h3>
-   <span>100ml · EDP</span>
+<span>100ml · EDP</span>
 <p class="precio">$50.000</p>
-<a class="boton" href="https://wa.me/5493813571205?text=Hola!%20Quiero%20Homem%20Cor.Agio">Comprar</a>
+<a class="boton" href="https://wa.me/5493813571205?text=Quiero%20Homem%20Coragio">Comprar</a>
 </div>
 
 </div>
@@ -193,107 +252,122 @@
 <div class="producto">
 <img src="humor-beijo-f.jpg">
 <h3>Humor Beijo</h3>
-   <span>75ml · EDT</span>
+<span>75ml · EDT</span>
 <p class="precio">$30.000</p>
-<a class="boton" href="https://wa.me/5493813571205?text=Hola!%20Quiero%20Humor%20Beijo%20Femenino">Comprar</a>
+<a class="boton" href="https://wa.me/5493813571205?text=Quiero%20Humor%20Beijo%20Femenino">Comprar</a>
 </div>
 
 <div class="producto">
 <img src="humor-festival.jpg">
 <h3>Humor Festival</h3>
-  <span>75ml · EDT</span>
+<span>75ml · EDT</span>
 <p class="precio">$30.000</p>
-<a class="boton" href="https://wa.me/5493813571205?text=Hola!%20Quiero%20Humor%20Festival">Comprar</a>
+<a class="boton" href="https://wa.me/5493813571205?text=Quiero%20Humor%20Festival">Comprar</a>
 </div>
 
 <div class="producto">
 <img src="humor-meu-primeiro.jpg">
 <h3>Humor Meu Primeiro</h3>
-  <span>75ml · EDT</span>
+<span>75ml · EDT</span>
 <p class="precio">$30.000</p>
-<a class="boton" href="https://wa.me/5493813571205?text=Hola!%20Quiero%20Humor%20Meu%20Primeiro">Comprar</a>
+<a class="boton" href="https://wa.me/5493813571205?text=Quiero%20Humor%20Meu%20Primeiro">Comprar</a>
 </div>
 
 <div class="producto">
 <img src="ekos-pitanga-preta.jpg">
-<h3>Frescor Ekos Pitanga Preta</h3>
-  <span>150ml · EDT</span>
+<h3>Ekos Pitanga Preta</h3>
+<span>150ml · EDT</span>
 <p class="precio">$23.000</p>
-<a class="boton" href="https://wa.me/5493813571205?text=Hola!%20Quiero%20Ekos%20Pitanga%20Preta">Comprar</a>
+<a class="boton" href="https://wa.me/5493813571205?text=Quiero%20Ekos%20Pitanga%20Preta">Comprar</a>
 </div>
 
 <div class="producto">
 <img src="kriska-jeans.jpg">
 <h3>Kriska Jeans</h3>
-  <span>100ml · EDT</span>
+<span>100ml · EDT</span>
 <p class="precio">$24.000</p>
-<a class="boton" href="https://wa.me/5493813571205?text=Hola!%20Quiero%20Kriska%20Jeans">Comprar</a>
+<a class="boton" href="https://wa.me/5493813571205?text=Quiero%20Kriska%20Jeans">Comprar</a>
 </div>
 
 <div class="producto">
 <img src="una-clasico.jpg">
 <h3>Una Clásico</h3>
-  <span>50ml · EDP</span>
+<span>50ml · EDP</span>
 <p class="precio">$45.000</p>
-<a class="boton" href="https://wa.me/5493813571205?text=Hola!%20Quiero%20Una%20Clásico">Comprar</a>
+<a class="boton" href="https://wa.me/5493813571205?text=Quiero%20Una%20Clasico">Comprar</a>
 </div>
 
 <div class="producto">
 <img src="una-somos.jpg">
 <h3>Una Somos</h3>
-  <span>50ml · EDP</span>
+<span>50ml · EDP</span>
 <p class="precio">$45.000</p>
-<a class="boton" href="https://wa.me/5493813571205?text=Hola!%20Quiero%20Una%20Somos">Comprar</a>
+<a class="boton" href="https://wa.me/5493813571205?text=Quiero%20Una%20Somos">Comprar</a>
 </div>
 
 <div class="producto">
 <img src="ilia-clasico.jpg">
-<h3>Ilía Clásico</h3>
-    <span>50ml · EDP</span>
+<h3>Ilia Clásico</h3>
+<span>50ml · EDP</span>
 <p class="precio">$38.000</p>
-<a class="boton" href="https://wa.me/5493813571205?text=Hola!%20Quiero%20Ilía%20Clásico">Comprar</a>
+<a class="boton" href="https://wa.me/5493813571205?text=Quiero%20Ilia%20Clasico">Comprar</a>
 </div>
 
 <div class="producto">
 <img src="ilia-secreto.jpg">
-<h3>Ilía Secreto</h3>
-    <span>50ml · EDP</span>
+<h3>Ilia Secreto</h3>
+<span>50ml · EDP</span>
 <p class="precio">$38.000</p>
-<a class="boton" href="https://wa.me/5493813571205?text=Hola!%20Quiero%20Ilía%20Secreto">Comprar</a>
-</div>
-<div class="producto">
-  <img src="essencial-sentir-f.jpg">
-  <h3>Essencial Sentir</h3>
-    <span>100ml · EDP</span>
-  <p class="precio">$48.000</p>
-  <a class="boton" href="https://wa.me/5493813571205?text=Hola!%20Quiero%20Essencial%20Sentir%20Femenino">Comprar</a>
+<a class="boton" href="https://wa.me/5493813571205?text=Quiero%20Ilia%20Secreto">Comprar</a>
 </div>
 
 <div class="producto">
-  <img src="essencial-exclusivo-f.jpg">
-  <h3>Essencial Exclusivo</h3>
-   <span>100ml · EDP</span>
-  <p class="precio">$48.000</p>
-  <a class="boton" href="https://wa.me/5493813571205?text=Hola!%20Quiero%20Essencial%20Exclusivo%20Femenino">Comprar</a>
+<img src="ilia-completa.jpg">
+<h3>Ilia Completa</h3>
+<span>50ml · EDP</span>
+<p class="precio">$38.000</p>
+<a class="boton" href="https://wa.me/5493813571205?text=Quiero%20Ilia%20Completa">Comprar</a>
+</div>
+  
+<div class="producto">
+<img src="essencial-sentir-f.jpg">
+<h3>Essencial Sentir</h3>
+<span>100ml · EDP</span>
+<p class="precio">$48.000</p>
+<a class="boton" href="https://wa.me/5493813571205?text=Quiero%20Essencial%20Sentir%20Femenino">Comprar</a>
 </div>
 
 <div class="producto">
-  <img src="essencial-floral.jpg">
-  <h3>Essencial Exclusivo Floral</h3>
-   <span>100ml · EDP</span>
-  <p class="precio">$48.000</p>
-  <a class="boton" href="https://wa.me/5493813571205?text=Hola!%20Quiero%20Essencial%20Exclusivo%20Floral">Comprar</a>
+<img src="essencial-exclusivo-f.jpg">
+<h3>Essencial Exclusivo</h3>
+<span>100ml · EDP</span>
+<p class="precio">$48.000</p>
+<a class="boton" href="https://wa.me/5493813571205?text=Quiero%20Essencial%20Exclusivo%20Femenino">Comprar</a>
 </div>
 
 <div class="producto">
-  <img src="essencial-oud.jpg">
-  <h3>Essencial Oud</h3>
-   <span>100ml · EDP</span>
-  <p class="precio">$48.000</p>
-  <a class="boton" href="https://wa.me/5493813571205?text=Hola!%20Quiero%20Essencial%20Oud">Comprar</a>
+<img src="essencial-floral.jpg">
+<h3>Essencial Floral</h3>
+<span>100ml · EDP</span>
+<p class="precio">$48.000</p>
+<a class="boton" href="https://wa.me/5493813571205?text=Quiero%20Essencial%20Floral">Comprar</a>
+</div>
+
+<div class="producto">
+<img src="essencial-oud.jpg">
+<h3>Essencial Oud</h3>
+<span>100ml · EDP</span>
+<p class="precio">$48.000</p>
+<a class="boton" href="https://wa.me/5493813571205?text=Quiero%20Essencial%20Oud">Comprar</a>
 </div>
 
 </div>
+</div>
+
+<div class="info">
+<p>✔ Productos Natura</p>
+<p>📦 Entregas en San Miguel de Tucumán</p>
+<p>📲 Comprá directo por WhatsApp</p>
 </div>
 
 </body>
