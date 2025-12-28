@@ -6,6 +6,33 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
+  .whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background: #25d366;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: pulse 1.8s infinite;
+}
+
+.whatsapp-float img {
+  width: 34px;
+  height: 34px;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
   .wp-numero {
   display: inline-block;
   border: 2px solid #25d366;
@@ -24,6 +51,11 @@
 }
 
 *{box-sizing:border-box}
+  <!-- BOTÓN WHATSAPP FLOTANTE -->
+<a href="https://wa.me/5493813571205" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+</a>
+
 body{
   margin:0;
   font-family:Arial, sans-serif;
