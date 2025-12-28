@@ -3,16 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Perfumes Natura Originales</title>
+<title>Perfumes Natura</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root{
   --verde:#1f4f3a;
-  --verde-claro:#4f7f6a;
+  --verde2:#4f7f6a;
   --fondo:#f4f7f5;
-  --blanco:#ffffff;
 }
 *{box-sizing:border-box}
 body{
@@ -22,7 +21,7 @@ body{
   color:#2b2b2b;
 }
 header{
-  background:linear-gradient(135deg,var(--verde),var(--verde-claro));
+  background:linear-gradient(135deg,var(--verde),var(--verde2));
   color:white;
   padding:40px 20px;
   text-align:center;
@@ -54,15 +53,29 @@ h2{
   height:180px;
   object-fit:contain;
 }
-.precio{font-weight:700;margin-top:6px}
-.whatsapp{
-  position:fixed;
-  bottom:20px;
-  right:20px;
+.precio{
+  font-weight:700;
+  margin:6px 0;
+}
+.btn-comprar{
+  display:inline-block;
+  margin-top:8px;
+  padding:10px 14px;
   background:#25d366;
   color:white;
-  padding:14px 18px;
-  border-radius:50px;
+  text-decoration:none;
+  border-radius:6px;
+  font-weight:600;
+  font-size:14px;
+}
+.footer{
+  background:#fff;
+  padding:20px;
+  text-align:center;
+  font-size:14px;
+}
+.footer a{
+  color:#1f4f3a;
   text-decoration:none;
   font-weight:600;
 }
@@ -73,22 +86,29 @@ h2{
 
 <header>
   <img src="logo-natura.png">
-  <h1>Perfumes Natura Originales</h1>
-  <p>Productos 100% originales · Consultá disponibilidad</p>
+  <h1>Perfumes Natura</h1>
+  <p>Catálogo disponible</p>
 </header>
 
 <section>
 <h2>Masculinos</h2>
 <div class="grid">
 
-<div class="card"><img src="humor-beijo-m.jpg"><h3>Humor Beijo</h3><p>75ml · EDT</p></div>
-<div class="card"><img src="kaiak-urbe.jpg"><h3>Kaiak Urbe</h3><p>100ml · EDT</p></div>
-<div class="card"><img src="kaiak-pulso.jpg"><h3>Kaiak Pulso</h3><p>100ml · EDT</p></div>
-<div class="card"><img src="biografia-clasico.jpg"><h3>Biografía Clásico</h3><p>100ml · EDT</p></div>
-<div class="card"><img src="esencial-sentir-m.jpg"><h3>Essencial Sentir</h3><p>100ml · EDP</p></div>
-<div class="card"><img src="esencial-exclusivo-m.jpg"><h3>Essencial Exclusivo</h3><p>100ml · EDP</p></div>
-<div class="card"><img src="homem-nos.jpg"><h3>Homem Nos</h3><p>100ml · EDP</p></div>
-<div class="card"><img src="homem-cor-agio.jpg"><h3>Homem Cor.Agio</h3><p>100ml · EDP</p></div>
+<div class="card"><img src="humor-beijo.jpg"><h3>Humor Beijo</h3><p>75ml · EDT</p><p class="precio">$30.000</p><a class="btn-comprar" href="https://wa.me/5493813571205?text=Hola,%20quiero%20comprar%20Humor%20Beijo%2075ml%20EDT" target="_blank">Comprar</a></div>
+
+<div class="card"><img src="kaiak-urbe.jpg"><h3>Kaiak Urbe</h3><p>100ml · EDT</p><p class="precio">$30.000</p><a class="btn-comprar" href="https://wa.me/5493813571205?text=Hola,%20quiero%20comprar%20Kaiak%20Urbe%20100ml%20EDT" target="_blank">Comprar</a></div>
+
+<div class="card"><img src="kaiak-pulso.jpg"><h3>Kaiak Pulso</h3><p>100ml · EDT</p><p class="precio">$30.000</p><a class="btn-comprar" href="https://wa.me/5493813571205?text=Hola,%20quiero%20comprar%20Kaiak%20Pulso%20100ml%20EDT" target="_blank">Comprar</a></div>
+
+<div class="card"><img src="biografia-clasico.jpg"><h3>Biografía Clásico</h3><p>100ml · EDT</p><p class="precio">$30.000</p><a class="btn-comprar" href="https://wa.me/5493813571205?text=Hola,%20quiero%20comprar%20Biografía%20Clásico%20100ml%20EDT" target="_blank">Comprar</a></div>
+
+<div class="card"><img src="essencial-sentir.jpg"><h3>Essencial Sentir</h3><p>100ml · EDP</p><p class="precio">$48.000</p><a class="btn-comprar" href="https://wa.me/5493813571205?text=Hola,%20quiero%20comprar%20Essencial%20Sentir%20100ml%20EDP" target="_blank">Comprar</a></div>
+
+<div class="card"><img src="essencial-exclusivo.jpg"><h3>Essencial Exclusivo</h3><p>100ml · EDP</p><p class="precio">$48.000</p><a class="btn-comprar" href="https://wa.me/5493813571205?text=Hola,%20quiero%20comprar%20Essencial%20Exclusivo%20100ml%20EDP" target="_blank">Comprar</a></div>
+
+<div class="card"><img src="homem-nos.jpg"><h3>Homem Nos</h3><p>100ml · EDP</p><p class="precio">$40.000</p><a class="btn-comprar" href="https://wa.me/5493813571205?text=Hola,%20quiero%20comprar%20Homem%20Nos%20100ml%20EDP" target="_blank">Comprar</a></div>
+
+<div class="card"><img src="homem-cor-agio.jpg"><h3>Homem Cor.Agio</h3><p>100ml · EDP</p><p class="precio">$50.000</p><a class="btn-comprar" href="https://wa.me/5493813571205?text=Hola,%20quiero%20comprar%20Homem%20Cor.Agio%20100ml%20EDP" target="_blank">Comprar</a></div>
 
 </div>
 </section>
@@ -97,35 +117,31 @@ h2{
 <h2>Femeninos</h2>
 <div class="grid">
 
-<div class="card"><img src="humor-beijo-f.jpg"><h3>Humor Beijo</h3><p>75ml · EDT</p></div>
-<div class="card"><img src="humor-festival.jpg"><h3>Humor Festival</h3><p>75ml · EDT</p></div>
-<div class="card"><img src="humor-meu-primeiro.jpg"><h3>Humor Meu Primeiro</h3><p>75ml · EDT</p></div>
+<div class="card"><img src="humor-beijo-f.jpg"><h3>Humor Beijo</h3><p>75ml · EDT</p><p class="precio">$30.000</p><a class="btn-comprar" href="https://wa.me/5493813571205?text=Hola,%20quiero%20comprar%20Humor%20Beijo%2075ml%20EDT" target="_blank">Comprar</a></div>
 
-<div class="card"><img src="esencial-sentir-f.jpg"><h3>Essencial Sentir</h3><p>100ml · EDP</p></div>
-<div class="card"><img src="esencial-exclusivo-f.jpg"><h3>Essencial Exclusivo</h3><p>100ml · EDP</p></div>
-<div class="card"><img src="esencial-floral.jpg"><h3>Essencial Exclusivo Floral</h3><p>100ml · EDP</p></div>
-<div class="card"><img src="esencial-oud.jpg"><h3>Essencial Oud</h3><p>100ml · EDP</p></div>
+<div class="card"><img src="humor-festival.jpg"><h3>Humor Festival</h3><p>75ml · EDT</p><p class="precio">$30.000</p><a class="btn-comprar" href="https://wa.me/5493813571205?text=Hola,%20quiero%20comprar%20Humor%20Festival%2075ml%20EDT" target="_blank">Comprar</a></div>
 
-<div class="card"><img src="pitanga-preta.jpg"><h3>Ekos Pitanga Preta</h3><p>150ml · EDT</p></div>
-<div class="card"><img src="kriska-jeans.jpg"><h3>Kriska Jeans</h3><p>100ml · EDT</p></div>
+<div class="card"><img src="humor-meu-primeiro.jpg"><h3>Humor Meu Primeiro</h3><p>75ml · EDT</p><p class="precio">$30.000</p><a class="btn-comprar" href="https://wa.me/5493813571205?text=Hola,%20quiero%20comprar%20Humor%20Meu%20Primeiro%2075ml%20EDT" target="_blank">Comprar</a></div>
 
-<div class="card"><img src="kaiak-vital.jpg"><h3>Kaiak Vital</h3><p>100ml · EDT</p></div>
-<div class="card"><img src="kaiak-oceano.jpg"><h3>Kaiak Océano</h3><p>100ml · EDT</p></div>
-<div class="card"><img src="kaiak-clasico.jpg"><h3>Kaiak Clásico</h3><p>100ml · EDT</p></div>
-<div class="card"><img src="kaiak-aventura.jpg"><h3>Kaiak Aventura</h3><p>100ml · EDT</p></div>
-<div class="card"><img src="kaiak-o2.jpg"><h3>Kaiak O2</h3><p>100ml · EDT</p></div>
-<div class="card"><img src="kaiak-sonar.jpg"><h3>Kaiak Sonar</h3><p>100ml · EDT</p></div>
+<div class="card"><img src="una-clasico.jpg"><h3>Una Clásico</h3><p>50ml · EDP</p><p class="precio">$45.000</p><a class="btn-comprar" href="https://wa.me/5493813571205?text=Hola,%20quiero%20comprar%20Una%20Clásico%2050ml%20EDP" target="_blank">Comprar</a></div>
 
-<div class="card"><img src="una-clasico.jpg"><h3>Una Clásico</h3><p>50ml · EDP</p><p class="precio">$45.000</p></div>
-<div class="card"><img src="una-somos.jpg"><h3>Una Somos</h3><p>50ml · EDP</p><p class="precio">$45.000</p></div>
-<div class="card"><img src="ilia-clasico.jpg"><h3>Ilía Clásico</h3><p>50ml · EDP</p><p class="precio">$38.000</p></div>
-<div class="card"><img src="ilia-secreto.jpg"><h3>Ilía Secreto</h3><p>50ml · EDP</p><p class="precio">$38.000</p></div>
-<div class="card"><img src="ilia-completa.jpg"><h3>Ilía Completa</h3><p>50ml · EDP</p><p class="precio">$38.000</p></div>
+<div class="card"><img src="una-somos.jpg"><h3>Una Somos</h3><p>50ml · EDP</p><p class="precio">$45.000</p><a class="btn-comprar" href="https://wa.me/5493813571205?text=Hola,%20quiero%20comprar%20Una%20Somos%2050ml%20EDP" target="_blank">Comprar</a></div>
+
+<div class="card"><img src="ilia-clasico.jpg"><h3>Ilía Clásico</h3><p>50ml · EDP</p><p class="precio">$38.000</p><a class="btn-comprar" href="https://wa.me/5493813571205?text=Hola,%20quiero%20comprar%20Ilía%20Clásico%2050ml%20EDP" target="_blank">Comprar</a></div>
+
+<div class="card"><img src="ilia-secreto.jpg"><h3>Ilía Secreto</h3><p>50ml · EDP</p><p class="precio">$38.000</p><a class="btn-comprar" href="https://wa.me/5493813571205?text=Hola,%20quiero%20comprar%20Ilía%20Secreto%2050ml%20EDP" target="_blank">Comprar</a></div>
 
 </div>
 </section>
 
-<a class="whatsapp" href="https://wa.me/549XXXXXXXXXX">WhatsApp</a>
+<div class="footer">
+  <p>Productos originales Natura</p>
+  <p>
+    📍 <a href="https://www.google.com/maps/search/?api=1&query=Catamarca+1129,+San+Miguel+de+Tucumán" target="_blank">
+    Catamarca 1129, San Miguel de Tucumán
+    </a>
+  </p>
+</div>
 
 </body>
 </html>
