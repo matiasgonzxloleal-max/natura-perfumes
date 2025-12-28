@@ -11,8 +11,63 @@
   --verde2:#2fa18c;
   --whatsapp:#25d366;
 }
+  .whatsapp-final {
+  position: sticky;
+  bottom: 0;
+  display: block;
+  background: #25d366;
+  color: white;
+  text-align: center;
+  padding: 16px 10px;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  z-index: 999;
+}
+
+.whatsapp-final span {
+  display: block;
+  font-size: 13px;
+  font-weight: normal;
+  margin-top: 4px;
+  opacity: 0.95;
+}
+
+.whatsapp-final:active {
+  background: #1ebe5d;
+}
+
+  .ubicacion {
+  display: block;
+  background: #1f6f5c;
+  color: white;
+  text-align: center;
+  padding: 14px 10px;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.ubicacion span {
+  display: block;
+  font-size: 12px;
+  font-weight: normal;
+  opacity: 0.9;
+  margin-top: 4px;
+}
+
+.ubicacion:active {
+  background: #195a4a;
+}
+
 
 *{box-sizing:border-box}
+<a class="whatsapp-final" 
+   href="https://wa.me/5493813571205" 
+   target="_blank">
+  📲 Comprar por WhatsApp
+  <span>381 357-1205</span>
+</a>
 
 body{
   margin:0;
@@ -48,18 +103,12 @@ header{
   display:inline-block;
 }
 
-/* DIRECCION */
-.direccion{
-  background:#e6f2ef;
-  padding:12px;
-  text-align:center;
-  font-size:14px;
-}
-.direccion a{
-  color:var(--verde);
-  text-decoration:none;
-  font-weight:600;
-}
+<a class="ubicacion" 
+   href="https://www.google.com/maps/search/?api=1&query=Catamarca+1129,+San+Miguel+de+Tucumán" 
+   target="_blank">
+  📍 Catamarca 1129 · San Miguel de Tucumán
+  <span>Tocar para abrir en Google Maps</span>
+</a>
 
 /* SECCIONES */
 .seccion{
