@@ -105,43 +105,32 @@ header p{margin-top:8px;font-size:15px}
   /* EFECTO CARD HOVER */
 .producto{
   position: relative;
-  transition: transform .3s ease, box-shadow .3s ease;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .producto:hover{
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 15px 35px rgba(0,0,0,.15);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
 }
+
+/* overlay */
 .producto::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  border-radius:16px;
+  content: "";
+  position: absolute;
+  inset: 0;
   background: linear-gradient(
-    120deg,
-    transparent,
-    rgba(37,211,102,.15),
-    transparent
+    to top,
+    rgba(0,0,0,0.12),
+    transparent 60%
   );
-  opacity:0;
-  transition: opacity .4s ease;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none; /* ⭐ ESTA ES LA CLAVE */
 }
 
 .producto:hover::after{
-  opacity:1;
-}
-
-.producto h3{margin:10px 0 5px;font-size:16px}
-.producto span{font-size:13px;color:#555}
-.precio{font-size:18px;font-weight:bold;margin:10px 0}
-.boton{
-  display:block;
-  background:#25d366;
-  color:white;
-  padding:10px;
-  border-radius:10px;
-  text-decoration:none;
-  font-weight:bold;
+  opacity: 1;
 }
 
 /* FOOTER */
