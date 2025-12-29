@@ -2,6 +2,46 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
+
+  <style>
+    
+    .scroll-indicador{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      margin:12px 0;
+      font-size:13px;
+      color:#777;
+    }
+
+    .flechas{
+      display:flex;
+      gap:6px;
+      margin-top:4px;
+    }
+
+    .flechas span{
+      width:8px;
+      height:8px;
+      border-right:2px solid #777;
+      border-bottom:2px solid #777;
+      transform:rotate(-45deg);
+      animation:scrollHint 1.5s infinite;
+      opacity:0;
+    }
+
+    .flechas span:nth-child(1){ animation-delay:0s; }
+    .flechas span:nth-child(2){ animation-delay:.2s; }
+    .flechas span:nth-child(3){ animation-delay:.4s; }
+
+    @keyframes scrollHint{
+      0%{opacity:0; transform:translateX(0) rotate(-45deg);}
+      50%{opacity:1;}
+      100%{opacity:0; transform:translateX(10px) rotate(-45deg);}
+    }
+  </style>
+</head>
+
 <title>Natura Cosméticos HyG</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -27,6 +67,15 @@ header{
 }
 header h1{font-size:28px}
 header p{margin-top:8px;font-size:15px}
+  <div class="scroll-indicador">
+  <span>Deslizá</span>
+  <div class="flechas">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
 
 /* MENU SCROLL */
 .menu-scroll{
