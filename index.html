@@ -6,59 +6,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-  .whatsapp-float {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 60px;
-  height: 60px;
-  background: #25d366;
-  border-radius: 50%;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-  animation: pulse 1.8s infinite;
-}
+*{box-sizing:border-box;margin:0;padding:0}
 
-.whatsapp-float img {
-  width: 34px;
-  height: 34px;
-}
-
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.08); }
-  100% { transform: scale(1); }
-}
-
-  .wp-numero {
-  display: inline-block;
-  border: 2px solid #25d366;
-  color: #25d366;
-  padding: 10px 16px;
-  border-radius: 30px;
-  font-weight: bold;
-  text-decoration: none;
-  font-size: 18px;
-  transition: all 0.3s ease;
-}
-
-.wp-numero:hover {
-  background: #25d366;
-  color: white;
-}
-
-*{box-sizing:border-box}
-  <!-- BOTÓN WHATSAPP FLOTANTE -->
-<a href="https://wa.me/5493813571205" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-</a>
+html{scroll-behavior:smooth}
 
 body{
-  margin:0;
-  font-family:Arial, sans-serif;
+  font-family:Arial,sans-serif;
   background:#f4f6f5;
 }
 
@@ -69,30 +22,45 @@ header{
   text-align:center;
   padding:30px 15px;
 }
-header h1{margin:0;font-size:28px}
-header p{margin:10px 0 0;font-size:15px}
+header h1{font-size:28px}
+header p{margin-top:8px;font-size:15px}
+
+/* MENU SCROLL */
+.menu-scroll{
+  position:sticky;
+  top:0;
+  background:white;
+  display:flex;
+  justify-content:space-around;
+  padding:10px;
+  z-index:1000;
+  box-shadow:0 2px 8px rgba(0,0,0,.1);
+}
+.menu-scroll a{
+  text-decoration:none;
+  color:#1f6f5c;
+  font-weight:bold;
+  font-size:14px;
+}
 
 /* BOTONES GRANDES */
-.btn-wp, .btn-maps{
+.btn-wp,.btn-maps{
   display:flex;
-  align-items:center;
   justify-content:center;
-  gap:10px;
-  background:#25d366;
-  color:white;
-  padding:14px;
+  align-items:center;
   margin:12px 15px;
-  border-radius:12px;
+  padding:14px;
+  border-radius:14px;
+  color:white;
   font-weight:bold;
   text-decoration:none;
   font-size:16px;
 }
+.btn-wp{background:#25d366}
 .btn-maps{background:#1f6f5c}
 
 /* SECCIONES */
-.seccion{
-  padding:20px 15px;
-}
+.seccion{padding:20px 15px}
 h2{
   margin-bottom:15px;
   border-left:5px solid #1f6f5c;
@@ -111,26 +79,15 @@ h2{
   padding:15px;
   text-align:center;
   box-shadow:0 5px 15px rgba(0,0,0,.08);
-  transition:.2s;
 }
 .producto img{
   width:100%;
   height:180px;
   object-fit:contain;
 }
-.producto h3{
-  margin:10px 0 5px;
-  font-size:16px;
-}
-.producto span{
-  font-size:13px;
-  color:#555;
-}
-.precio{
-  font-size:18px;
-  font-weight:bold;
-  margin:10px 0;
-}
+.producto h3{margin:10px 0 5px;font-size:16px}
+.producto span{font-size:13px;color:#555}
+.precio{font-size:18px;font-weight:bold;margin:10px 0}
 .boton{
   display:block;
   background:#25d366;
@@ -150,61 +107,48 @@ h2{
   text-align:center;
   box-shadow:0 5px 15px rgba(0,0,0,.08);
 }
-.footer a{
+.wp-numero{
+  display:inline-block;
+  border:2px solid #25d366;
   color:#25d366;
+  padding:10px 18px;
+  border-radius:30px;
   font-weight:bold;
   text-decoration:none;
   font-size:18px;
 }
 
-/* BOTÓN WP FLOTANTE */
-.wp-float{
+/* WHATSAPP FLOTANTE */
+.whatsapp-float{
   position:fixed;
   bottom:20px;
   right:20px;
-  background:#25d366;
-  color:white;
   width:60px;
   height:60px;
+  background:#25d366;
   border-radius:50%;
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:30px;
-  text-decoration:none;
   box-shadow:0 5px 15px rgba(0,0,0,.3);
-  z-index:1000;
+  z-index:2000;
+  animation:pulse 1.8s infinite;
+}
+.whatsapp-float img{width:34px}
+@keyframes pulse{
+  0%{transform:scale(1)}
+  50%{transform:scale(1.08)}
+  100%{transform:scale(1)}
 }
 </style>
-  html {
-  scroll-behavior: smooth;
-}
-
-.menu-scroll {
-  position: sticky;
-  top: 0;
-  background: white;
-  display: flex;
-  justify-content: space-around;
-  padding: 10px;
-  z-index: 1000;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-.menu-scroll a {
-  text-decoration: none;
-  color: #333;
-  font-weight: 600;
-  font-size: 14px;
-}
-
 </head>
 
 <body>
-  <div class="menu-scroll">
+
+<div class="menu-scroll">
   <a href="#masculinos">Masculinos</a>
   <a href="#femeninos">Femeninos</a>
-  <a href="#bodysplash">BodySplash Tododia</a>
+  <a href="#bodysplash">BodySplash TodoDia</a>
   <a href="#contacto">Contacto</a>
 </div>
 
