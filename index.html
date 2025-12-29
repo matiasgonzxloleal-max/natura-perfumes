@@ -2,71 +2,21 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Natura Cosméticos HyG</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
+
 *{box-sizing:border-box;margin:0;padding:0}
+
 html{scroll-behavior:smooth}
-body{font-family:Arial,sans-serif;background:#f4f6f5}
 
-/* ===== MENU SCROLL ===== */
-.menu-scroll{
-  position:sticky;
-  top:0;
-  background:white;
-  display:flex;
-  overflow-x:auto;
-  white-space:nowrap;
-  z-index:1000;
-  border-bottom:1px solid #ddd;
-}
-.menu-scroll a{
-  flex:0 0 auto;
-  padding:12px 16px;
-  text-decoration:none;
-  color:#1f6f5c;
-  font-weight:600;
-  font-size:14px;
-  border-right:1px solid #ddd;
-}
-.menu-scroll a:last-child{border-right:none}
-.menu-scroll::-webkit-scrollbar{display:none}
-
-/* ===== INDICADOR SCROLL ===== */
-.scroll-indicador{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  margin:8px 0 12px;
-  font-size:13px;
-  color:#777;
-}
-.flechas{
-  display:flex;
-  gap:6px;
-  margin-top:4px;
-}
-.flechas span{
-  width:8px;
-  height:8px;
-  border-right:2px solid #777;
-  border-bottom:2px solid #777;
-  transform:rotate(-45deg);
-  animation:scrollHint 1.5s infinite;
-  opacity:0;
-}
-.flechas span:nth-child(1){animation-delay:0s}
-.flechas span:nth-child(2){animation-delay:.2s}
-.flechas span:nth-child(3){animation-delay:.4s}
-
-@keyframes scrollHint{
-  0%{opacity:0;transform:translateX(0) rotate(-45deg)}
-  50%{opacity:1}
-  100%{opacity:0;transform:translateX(10px) rotate(-45deg)}
+body{
+  font-family:Arial,sans-serif;
+  background:#f4f6f5;
 }
 
-/* ===== HEADER ===== */
+/* HEADER */
 header{
   background:linear-gradient(135deg,#1f6f5c,#2f9e84);
   color:white;
@@ -75,9 +25,37 @@ header{
 }
 header h1{font-size:28px}
 header p{margin-top:8px;font-size:15px}
+  <div class="scroll-indicador">
+  <span>Deslizá</span>
+  <div class="flechas">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
 
-/* ===== BOTONES ===== */
-.btn-wp,.btn-maps,.btn-uber{
+
+/* MENU SCROLL */
+.menu-scroll{
+  position:sticky;
+  top:0;
+  background:white;
+  display:flex;
+  justify-content:space-around;
+  padding:10px;
+  z-index:1000;
+  box-shadow:0 2px 8px rgba(0,0,0,.1);
+}
+.menu-scroll a{
+  text-decoration:none;
+  color:#1f6f5c;
+  font-weight:bold;
+  font-size:14px;
+}
+
+/* BOTONES GRANDES */
+/* BOTONES GRANDES */
+.btn-wp, .btn-maps, .btn-uber{
   display:flex;
   justify-content:center;
   align-items:center;
@@ -88,37 +66,28 @@ header p{margin-top:8px;font-size:15px}
   font-weight:bold;
   text-decoration:none;
   font-size:16px;
-  transition:.25s ease;
+  transition:0.25s ease;
 }
+
+/* COLORES */
 .btn-wp{background:#25d366}
 .btn-maps{background:#1f6f5c}
 .btn-uber{background:#000}
-.btn-wp:hover,.btn-maps:hover,.btn-uber:hover{
+
+/* HOVER PARA LOS 3 */
+.btn-wp:hover,
+.btn-maps:hover,
+.btn-uber:hover{
   transform:scale(1.04);
   filter:brightness(1.1);
 }
 
-/* ===== SECCIONES ===== */
-.seccion{margin:70px 0}
-.seccion h2{
-  text-align:center;
-  font-size:26px;
-  margin-bottom:30px;
-  font-weight:700;
-}
-.separador{
-  width:80%;
-  height:1px;
-  background:linear-gradient(to right,transparent,#ccc,transparent);
-  margin:60px auto;
-}
 
-/* ===== PRODUCTOS ===== */
+/* PRODUCTOS */
 .productos{
   display:grid;
   grid-template-columns:repeat(2,1fr);
   gap:15px;
-  padding:0 15px;
 }
 .producto{
   background:white;
@@ -126,21 +95,52 @@ header p{margin-top:8px;font-size:15px}
   padding:15px;
   text-align:center;
   box-shadow:0 5px 15px rgba(0,0,0,.08);
-  transition:.3s ease;
 }
 .producto img{
   width:100%;
-  max-height:180px;
+  height:180px;
   object-fit:contain;
-  transition:.4s ease;
 }
-.producto:hover{
-  transform:translateY(-6px);
-  box-shadow:0 12px 25px rgba(0,0,0,.15);
+  .producto img{
+  transition: transform .4s ease;
 }
-.producto:hover img{transform:scale(1.08)}
 
-/* ===== FOOTER ===== */
+.producto:hover img{
+  transform: scale(1.08);
+}
+
+  /* EFECTO CARD HOVER */
+.producto{
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.producto:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+/* overlay */
+.producto::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.12),
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none; /* ⭐ ESTA ES LA CLAVE */
+}
+
+.producto:hover::after{
+  opacity: 1;
+}
+
+/* FOOTER */
 .footer{
   background:white;
   margin:25px 15px;
@@ -149,8 +149,50 @@ header p{margin-top:8px;font-size:15px}
   text-align:center;
   box-shadow:0 5px 15px rgba(0,0,0,.08);
 }
+  .wp-numero{
+  display:block;
+  background:#25d366;
+  color:white !important;
+  padding:10px;
+  border-radius:10px;
+  text-decoration:none !important;
+  font-weight:bold;
+}
 
-/* ===== WHATSAPP FLOAT ===== */
+.boton:hover{
+  background:#1ebc5c;
+}
+
+.boton{
+  display:block;
+  margin-top:12px;
+  padding:12px;
+  background:#1f6f5c;
+  color:white !important;
+  font-weight:bold;
+  text-decoration:none !important;
+  border-radius:12px;
+  font-size:16px;
+  transition:0.25s ease;
+  position:relative;
+  z-index:5;
+}
+
+.boton:visited,
+.boton:hover,
+.boton:active,
+.boton:focus{
+  color:white !important;
+  text-decoration:none !important;
+  background:#2f9e84;
+}
+
+.boton:hover{
+  transform:scale(1.05);
+  filter:brightness(1.1);
+}
+
+/* WHATSAPP FLOTANTE */
 .whatsapp-float{
   position:fixed;
   bottom:20px;
@@ -172,40 +214,104 @@ header p{margin-top:8px;font-size:15px}
   50%{transform:scale(1.08)}
   100%{transform:scale(1)}
 }
+  html {
+  scroll-behavior: smooth;
+}
+
+/* MENU SUPERIOR */
+.menu-scroll {
+  position: sticky;
+  top: 0;
+  background: white;
+  display: flex;
+  overflow-x: auto;        /* 👈 permite deslizar */
+  white-space: nowrap;
+  z-index: 1000;
+  border-bottom: 1px solid #ddd;
+}
+
+/* LINKS */
+.menu-scroll a {
+  flex: 0 0 auto;
+  padding: 12px 16px;
+  text-decoration: none;
+  color: #1f6f5c;
+  font-weight: 600;
+  font-size: 14px;
+  border-right: 1px solid #ddd; /* 👈 línea divisoria */
+}
+
+/* Saca la línea del último */
+.menu-scroll a:last-child {
+  border-right: none;
+}
+
+/* Scroll más prolijo en celular */
+.menu-scroll::-webkit-scrollbar {
+  display: none;
+}
+/* ===== SEPARADORES DE SECCIONES ===== */
+.seccion {
+  margin: 80px 0;
+}
+
+.seccion h2 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.seccion h2::after {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 3px;
+  background: #1f6f5c;
+  margin: 15px auto 0;
+  border-radius: 2px;
+}
+
+/* linea separadora entre secciones */
+.separador {
+  width: 80%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #ccc, transparent);
+  margin: 70px auto;
+}
 </style>
+
 </head>
 
 <body>
 
 <nav class="menu-scroll">
-  <a href="#masculinos">Masculinos</a>
-  <a href="#femeninos">Femeninos</a>
+  <a href="#masculinos">Perfumes Masculinos</a>
+  <a href="#femeninos">Perfumes Femeninos</a>
   <a href="#bodysplash">BodySplash</a>
-  <a href="#jabones">Jabones</a>
+  <a href="#jabones">Jabones en Barra</a>
   <a href="#cremas">Cremas Corporales</a>
 </nav>
 
-<div class="scroll-indicador">
-  <span>Deslizá</span>
-  <div class="flechas">
-    <span></span><span></span><span></span>
-  </div>
-</div>
-
 <header>
-  <h1>Perfumes Natura</h1>
-  <p>Promociones y stock disponible</p>
+<h1>Perfumes Natura</h1>
+<p>Promociones y stock disponible</p>
 </header>
 
-<a class="btn-wp" href="https://wa.me/5493813571205" target="_blank">WhatsApp</a>
-<a class="btn-maps" href="https://www.google.com/maps/search/?api=1&query=Catamarca+1129,+San+Miguel+de+Tucumán" target="_blank">📍 Ubicación</a>
-<a class="btn-uber" href="https://m.uber.com/ul/?action=setPickup&pickup=my_location" target="_blank">Uber Moto · Ver costo</a>
+<a class="btn-wp" href="https://wa.me/5493813571205" target="_blank">
+WhatsApp
+</a>
 
+<a class="btn-maps" href="https://www.google.com/maps/search/?api=1&query=Catamarca+1129,+San+Miguel+de+Tucumán" target="_blank">
+📍Ubicación📍
+</a>
 
-
-
-
-    
+<a href="https://m.uber.com/ul/?action=setPickup&pickup=my_location&dropoff[formatted_address]=Catamarca%201129%2C%20San%20Miguel%20de%20Tucum%C3%A1n"
+   target="_blank"
+   class="btn-uber">
+   Uber Moto · Ver costo de envío
+</a>
+  
     <div class="direccion">
 
 </div>
