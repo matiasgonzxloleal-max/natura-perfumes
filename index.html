@@ -94,6 +94,43 @@ header p{margin-top:8px;font-size:15px}
   height:180px;
   object-fit:contain;
 }
+  .producto img{
+  transition: transform .4s ease;
+}
+
+.producto:hover img{
+  transform: scale(1.08);
+}
+
+  /* EFECTO CARD HOVER */
+.producto{
+  position: relative;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.producto:hover{
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 15px 35px rgba(0,0,0,.15);
+}
+.producto::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:16px;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(37,211,102,.15),
+    transparent
+  );
+  opacity:0;
+  transition: opacity .4s ease;
+}
+
+.producto:hover::after{
+  opacity:1;
+}
+
 .producto h3{margin:10px 0 5px;font-size:16px}
 .producto span{font-size:13px;color:#555}
 .precio{font-size:18px;font-weight:bold;margin:10px 0}
