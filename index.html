@@ -176,9 +176,38 @@ h2{
   z-index:1000;
 }
 </style>
+  html {
+  scroll-behavior: smooth;
+}
+
+.menu-scroll {
+  position: sticky;
+  top: 0;
+  background: white;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.menu-scroll a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  font-size: 14px;
+}
+
 </head>
 
 <body>
+  <div class="menu-scroll">
+  <a href="#masculinos">Masculinos</a>
+  <a href="#femeninos">Femeninos</a>
+  <a href="#bodysplash">BodySplash Tododia</a>
+  <a href="#contacto">Contacto</a>
+</div>
+
 
 <header>
 <h1>Perfumes Natura</h1>
